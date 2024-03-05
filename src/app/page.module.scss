@@ -1,0 +1,70 @@
+    
+.main {
+    scroll-snap-align: start;
+    position: relative;
+    min-height: 100vh;
+
+    .header {
+        --bg-image: "";
+        position: absolute;
+        background: center / contain url("/testbg.jpg");
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            display: block;
+            background: linear-gradient(to top, var(--bg), #00000000)
+        }
+    }
+
+
+    .carousel {
+        margin: 0;
+        padding: 3rem;
+
+        position: absolute;
+        bottom: 0;
+        width: fit-content;
+        z-index: 100;
+
+        display: inline-flex;
+        list-style-type: none;
+        gap: 1rem;
+
+        li {
+            --scale: 1;
+            &:first-of-type {
+                background: green;
+                width: 40vw;
+                max-width: 20rem;
+                aspect-ratio: 1.5/1;
+
+            }
+            background: cyan;
+            width: 16vw;
+            max-width: 10rem;
+            border-radius: 0.7rem;
+
+
+            transition: 0.5s ease-in-out transform;
+            transform: scale(var(--scale));
+
+            
+            &:focus, &:hover {
+                --scale: 1.05;
+                outline: 5px solid #E20074;
+            }
+        }
+    }
+}
+
+
+.tabbedcontent {        
+    scroll-snap-align: start;
+    scroll-padding: 1rem;
+    height: 100vh;
+}  
