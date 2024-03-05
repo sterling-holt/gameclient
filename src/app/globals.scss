@@ -3,10 +3,9 @@
 :root {
   --bg: #000000;
 
-
-
-
-
+  -ms-overflow-style:none;
+  scrollbar-width: none;
+  
   background: black;
   color: white;
 
@@ -16,10 +15,12 @@
   max-height: 100vh;
   overflow-x: hidden;
 
-  scroll-snap-type: y mandatory;
 }
-
+html::-webkit-scrollbar {
+  display: none;
+}
 body {
 }
 
 
+.titlebar{ display: none; }

@@ -1,0 +1,25 @@
+.system {
+    background: blue;
+    display: flex;
+    gap: 1rem;
+
+    .controller {
+
+        &.connected {
+            background: green;
+        }
+
+        &.disconnected {
+            background: red;
+        }
+    }
+
+    .connection {
+        &.connected {
+
+        }
+        &.disconnected {
+            
+        }
+    }
+}

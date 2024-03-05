@@ -52,12 +52,9 @@ export const Controller = ({ children }: any) => {
   }, []);
 
   // Adjust the ref assignment to handle an array of elements
-  return (
-    <div>
-      <p>Do we have a controller active? {isControllerActive ? 'Yes' : 'No'}</p>
+  return <>
       <div>
         { children }
       </div>
-    </div>
-  );
+  </>
 };

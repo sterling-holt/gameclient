@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.scss";
 import { Navbar } from "./_components/navbar";
 import { Suspense } from "react";
-import { Controller } from './controller'
+import * as Controller from './_components/controller'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,13 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Suspense>
-          <Controller>
-            <div className={"titlebar"} style={{ display: "none" }}/>
-            <Navbar />
-            { children }
-          </Controller>
-        </Suspense>
+        <div className="titlebar" />
+        <Controller.Provider>
+          <Suspense>
+              <Navbar />
+              { children }
+          </Suspense>
+        </Controller.Provider>
       </body>
     </html>
   )
